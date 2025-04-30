@@ -1,0 +1,263 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+<world name="default">
+
+  <!-- Load ground plane -->
+  <include>
+    <uri>model://ground_plane</uri>
+  </include>
+
+  <!-- Load sun -->
+  <include>
+    <uri>model://sun</uri>
+  </include>
+
+  <!-- ROOM WALLS -->
+
+  <!-- Bottom Wall -->
+  <model name="wall_bottom">
+    <static>true</static>
+    <link name="wall_bottom_link">
+      <collision name="collision">
+        <geometry>
+          <box><size>3.3 0.05 0.5</size></box> <!-- wall width, depth, height -->
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box><size>3.3 0.05 0.5</size></box>
+        </geometry>
+        <material><ambient>0.7 0.7 0.7 1</ambient></material>
+      </visual>
+    </link>
+    <pose>1.65 -0.025 0.25 0 0 0</pose> <!-- x y z roll pitch yaw -->
+  </model>
+  <model name="wall_bottom_right_most">
+    <static>true</static>
+    <link name="wall_bottom_link_right">
+      <collision name="collision">
+        <geometry>
+          <box><size>1.91 0.05 0.5</size></box> <!-- wall width, depth, height -->
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box><size>1.91 0.05 0.5</size></box>
+        </geometry>
+        <material><ambient>0.7 0.7 0.7 1</ambient></material>
+      </visual>
+    </link>
+    <pose>4.26 0.10 0.25 0 0 0</pose> <!-- x y z roll pitch yaw -->
+  </model>
+  <model name="wall_bottom_vertical">
+    <static>true</static>
+    <link name="wall_bottom_link_vertical">
+      <collision name="collision">
+        <geometry>
+          <box><size>0.05 0.17 0.5</size></box> <!-- wall width, depth, height -->
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box><size>0.05 0.17 0.5</size></box>
+        </geometry>
+        <material><ambient>0.7 0.7 0.7 1</ambient></material>
+      </visual>
+    </link>
+    <pose>3.35 0.05 0.25 0 0 0</pose> <!-- x y z roll pitch yaw -->
+  </model>
+
+
+  <!-- Top Wall -->
+  <model name="wall_top">
+    <static>true</static>
+    <link name="wall_top_link">
+      <collision name="collision">
+        <geometry>
+          <box><size>5.31 0.05 0.5</size></box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box><size>5.31 0.05 0.5</size></box>
+        </geometry>
+        <material><ambient>0.7 0.7 0.7 1</ambient></material>
+      </visual>
+    </link>
+    <pose>2.605 2.88 0.25 0 0 0</pose>
+  </model>
+
+  <!-- Left Wall -->
+  <model name="wall_left">
+    <static>true</static>
+    <link name="wall_left_link">
+      <collision name="collision">
+        <geometry>
+          <box><size>0.05 1.5 0.5</size></box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box><size>0.05 1.5 0.5</size></box>
+        </geometry>
+        <material><ambient>0.7 0.7 0.7 1</ambient></material>
+      </visual>
+    </link>
+    <pose>-0.025 0.55 0.25 0 0 0</pose>
+  </model>
+  <model name="wall_left_upperpart">
+    <static>true</static>
+    <link name="wall_left_link_upper">
+      <collision name="collision">
+        <geometry>
+          <box><size>0.05 1.75 0.5</size></box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box><size>0.05 1.75 0.5</size></box>
+        </geometry>
+        <material><ambient>0.7 0.7 0.7 1</ambient></material>
+      </visual>
+    </link>
+    <pose>-0.025 1.9575 0.25 0 0 0</pose>
+  </model>
+
+
+  <!-- Right Wall -->
+  <model name="wall_right">
+    <static>true</static>
+    <link name="wall_right_link">
+      <collision name="collision">
+        <geometry>
+          <box><size>0.05 2.85 0.5</size></box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box><size>0.05 2.85 0.5</size></box>
+        </geometry>
+        <material><ambient>0.7 0.7 0.7 1</ambient></material>
+      </visual>
+    </link>
+    <pose>5.31 1.55 0.25 0 0 0</pose>
+  </model>
+
+  <!-- INTERNAL OBSTACLES -->
+  <!-- First block (left one) -->
+  <model name="obstacle1">
+    <static>true</static>
+    <link name="obstacle1_link">
+      <collision name="collision">
+        <geometry>
+          <box><size>0.2 0.4 0.5</size></box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box><size>0.2 0.4 0.5</size></box>
+        </geometry>
+        <material><ambient>0.5 0.5 0.5 1</ambient></material>
+      </visual>
+    </link>
+    <pose>1.3 1.85 0.25 0 0 0</pose>
+  </model>
+
+  <!-- Second block (right one) -->
+  <model name="obstacle2">
+    <static>true</static>
+    <link name="obstacle2_link">
+      <collision name="collision">
+        <geometry>
+          <box><size>0.4 0.4 0.5</size></box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box><size>0.4 0.4 0.5</size></box>
+        </geometry>
+        <material><ambient>0.5 0.5 0.5 1</ambient></material>
+      </visual>
+    </link>
+    <pose>2.5 1.85 0.25 0 0 0</pose>
+  </model>
+
+  <!-- Second block (right one) -->
+  <model name="obstacle_wall">
+    <static>true</static>
+    <link name="obstacle2_link">
+      <collision name="collision">
+        <geometry>
+          <box><size>0.5 0.2 0.5</size></box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box><size>0.5 0.2 0.5</size></box>
+        </geometry>
+        <material><ambient>0.5 0.5 0.5 1</ambient></material>
+      </visual>
+    </link>
+    <pose>0.25 1.1 0.25 0 0 0</pose>
+  </model>
+
+  <!-- Second block (right one) -->
+  <model name="obstacle_wp1">
+    <static>true</static>
+    <link name="obstacle_wp1">
+      <collision name="collision">
+        <geometry>
+          <box><size>0.5 0.2 0.5</size></box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box><size>0.5 0.2 0.5</size></box>
+        </geometry>
+        <material><ambient>0.5 0.5 0.5 1</ambient></material>
+      </visual>
+    </link>
+    <pose>1.7 0.8 0.25 0 0 0</pose>
+  </model>
+
+  <!-- Second block (right one) -->
+  <model name="obstacle_wp2">
+    <static>true</static>
+    <link name="obstacle2_wp2">
+      <collision name="collision">
+        <geometry>
+          <box><size>0.5 0.2 0.5</size></box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box><size>0.5 0.2 0.5</size></box>
+        </geometry>
+        <material><ambient>0.5 0.5 0.5 1</ambient></material>
+      </visual>
+    </link>
+    <pose>3.41 0.8 0.25 0 0 0</pose>
+  </model>
+
+  <!-- Second block (right one) -->
+  <model name="obstacle_wp6">
+    <static>true</static>
+    <link name="obstacle2_wp6">
+      <collision name="collision">
+        <geometry>
+          <box><size>0.4 0.2 0.5</size></box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box><size>0.4 0.2 0.5</size></box>
+        </geometry>
+        <material><ambient>0.5 0.5 0.5 1</ambient></material>
+      </visual>
+    </link>
+    <pose>3.81 1.85 0.25 0 0 0</pose>
+  </model>
+
+
+</world>
+</sdf>
